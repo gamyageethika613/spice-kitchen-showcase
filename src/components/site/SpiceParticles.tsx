@@ -12,7 +12,7 @@ export function SpiceParticles({ count = 18 }: { count?: number }) {
         opacity: 0.3 + Math.random() * 0.4,
         key: i,
       })),
-    [count]
+    [count],
   );
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
