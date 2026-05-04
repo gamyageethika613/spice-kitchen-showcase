@@ -22,7 +22,7 @@ export function MyPlateButton() {
 }
 
 export function MyPlateDrawer() {
-  const { items, open, setOpen, remove, clear, total } = usePlate();
+  const { items, open, setOpen, inc, dec, remove, clear, total } = usePlate();
   return (
     <AnimatePresence>
       {open && (
