@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { UtensilsCrossed, X, Trash2, Phone, Navigation, Info } from "lucide-react";
+import { UtensilsCrossed, X, Trash2, Phone, Navigation, Info, Plus, Minus } from "lucide-react";
 import { usePlate } from "./PlateContext";
 import { RESTAURANT } from "@/data/menu";
 
