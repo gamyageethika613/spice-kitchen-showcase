@@ -70,9 +70,20 @@ export function MyPlateDrawer() {
                       initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}
                       className="flex items-center justify-between gap-3 p-3 rounded-lg border border-gold/15 bg-background/40"
                     >
-                      <div className="min-w-0">
+                      <div className="min-w-0 flex-1">
                         <p className="font-serif text-cream truncate">{it.name}</p>
-                        <p className="text-xs text-gold">£{it.price.toFixed(2)}</p>
+                        <p className="text-xs text-gold">
+                          £{it.price.toFixed(2)} × {it.qty} = <span className="text-gold/90">£{(it.price * it.qty).toFixed(2)}</span>
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1 rounded-full border border-gold/40 bg-gold/5 px-1 py-0.5">
+                        <button onClick={() => dec(it.id)} className="w-7 h-7 rounded-full text-gold hover:bg-gold/20 inline-flex items-center justify-center transition" aria-label="Decrease">
+                          <Minus size={13} />
+                        </button>
+                        <span className="font-serif text-sm text-gold min-w-[1.5rem] text-center">{it.qty}</span>
+                        <button onClick={() => inc(it.id)} className="w-7 h-7 rounded-full text-gold hover:bg-gold/20 inline-flex items-center justify-center transition" aria-label="Increase">
+                          <Plus size={13} />
+                        </button>
                       </div>
                       <button onClick={() => remove(it.id)} className="text-cream/50 hover:text-destructive p-1.5 rounded" aria-label="Remove">
                         <Trash2 size={16} />
