@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Phone, MapPin, UtensilsCrossed, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-spices.jpg";
 import { RESTAURANT } from "@/data/menu";
+import { openMaps } from "@/lib/maps";
 import { SpiceParticles } from "./SpiceParticles";
 
 export function Hero() {
