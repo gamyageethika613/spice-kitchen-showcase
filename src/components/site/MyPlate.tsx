@@ -15,7 +15,7 @@ export function MyPlateButton() {
       <UtensilsCrossed size={18} />
       <span className="hidden sm:inline text-sm uppercase tracking-wider">My Plate</span>
       <span className="ml-1 inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-background/30 text-xs font-semibold">
-        {items.length}
+        {count}
       </span>
     </motion.button>
   );
