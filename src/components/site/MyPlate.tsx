@@ -50,8 +50,8 @@ export function MyPlateDrawer() {
             <div className="flex items-start gap-3 m-5 p-4 rounded-lg border border-gold/30 bg-gold/5">
               <Info size={18} className="text-gold shrink-0 mt-0.5" />
               <p className="text-xs text-cream/70 leading-relaxed">
-                My Plate is only a favourites shortlist to help you remember dishes.
-                Please order at the counter or call the restaurant.
+                My Plate is only a favourites shortlist to help you remember dishes
+                and estimate total cost. Please order at the counter or call the restaurant.
               </p>
             </div>
 
