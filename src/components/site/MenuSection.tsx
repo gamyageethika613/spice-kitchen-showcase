@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, Plus, Check } from "lucide-react";
+import { Flame, Plus, Minus } from "lucide-react";
 import { MENU, type MenuItem } from "@/data/menu";
 import { usePlate } from "./PlateContext";
 
