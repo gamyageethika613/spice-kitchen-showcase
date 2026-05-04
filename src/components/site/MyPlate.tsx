@@ -108,10 +108,10 @@ export function MyPlateDrawer() {
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium hover:scale-[1.02] transition">
                   <Phone size={14} /> Call
                 </a>
-                <a href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer"
+                <button onClick={openMaps}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-gold/60 text-gold text-sm hover:bg-gold/10 transition">
                   <Navigation size={14} /> Directions
-                </a>
+                </button>
               </div>
               {items.length > 0 && (
                 <button onClick={clear}
