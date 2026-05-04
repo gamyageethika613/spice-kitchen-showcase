@@ -63,9 +63,9 @@ export function Hero() {
           <a href={RESTAURANT.phoneLink} className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-gold/60 text-gold hover:bg-gold/10 transition">
             <Phone size={18} /> Call Restaurant
           </a>
-          <a href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-gold/60 text-gold hover:bg-gold/10 transition">
+          <button onClick={openMaps} className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-gold/60 text-gold hover:bg-gold/10 transition">
             <MapPin size={18} /> Get Directions
-          </a>
+          </button>
         </motion.div>
 
         <motion.div
