@@ -4,7 +4,7 @@ import { usePlate } from "./PlateContext";
 import { RESTAURANT } from "@/data/menu";
 
 export function MyPlateButton() {
-  const { items, setOpen } = usePlate();
+  const { count, setOpen } = usePlate();
   return (
     <motion.button
       initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.5 }}
