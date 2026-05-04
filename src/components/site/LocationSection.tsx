@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation, ExternalLink } from "lucide-react";
 import { RESTAURANT } from "@/data/menu";
+import { openMaps } from "@/lib/maps";
 
 export function LocationSection() {
   return (
