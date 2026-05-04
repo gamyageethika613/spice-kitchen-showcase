@@ -23,8 +23,8 @@ function SpiceMeter({ level = 0 }: { level?: number }) {
 }
 
 function DishRow({ item }: { item: MenuItem }) {
-  const { add, has } = usePlate();
-  const added = has(item.id);
+  const { add, inc, dec, qtyOf } = usePlate();
+  const qty = qtyOf(item.id);
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
@@ -41,17 +41,32 @@ function DishRow({ item }: { item: MenuItem }) {
         <p className="text-sm text-cream/60 italic flex-1">{item.desc}</p>
         <div className="flex items-center gap-3 shrink-0">
           <SpiceMeter level={item.spice} />
-          <button
-            onClick={() => add(item)}
-            disabled={added}
-            className={`text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full border transition flex items-center gap-1 ${
-              added
-                ? "border-emerald-500/50 text-emerald-400 cursor-default"
-                : "border-gold/40 text-gold/80 hover:bg-gold/10 hover:text-gold"
-            }`}
-          >
-            {added ? <><Check size={11} /> Saved</> : <><Plus size={11} /> My Plate</>}
-          </button>
+          {qty === 0 ? (
+            <button
+              onClick={() => add(item)}
+              className="text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-gold/40 text-gold/80 hover:bg-gold/10 hover:text-gold transition flex items-center gap-1"
+            >
+              <Plus size={11} /> My Plate
+            </button>
+          ) : (
+            <div className="flex items-center gap-1 rounded-full border border-gold/50 bg-gold/10 px-1 py-0.5">
+              <button
+                onClick={() => dec(item.id)}
+                className="w-6 h-6 rounded-full text-gold hover:bg-gold/20 inline-flex items-center justify-center transition"
+                aria-label="Decrease quantity"
+              >
+                <Minus size={12} />
+              </button>
+              <span className="font-serif text-sm text-gold min-w-[1.25rem] text-center">{qty}</span>
+              <button
+                onClick={() => inc(item.id)}
+                className="w-6 h-6 rounded-full text-gold hover:bg-gold/20 inline-flex items-center justify-center transition"
+                aria-label="Increase quantity"
+              >
+                <Plus size={12} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
